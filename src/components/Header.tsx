@@ -23,7 +23,7 @@ const Header = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.8 }}
       >
-        Curated collection of visually stunning imagery
+        Curated collection of visually stunning and unique animations
       </motion.p>
     </motion.header>
   );
