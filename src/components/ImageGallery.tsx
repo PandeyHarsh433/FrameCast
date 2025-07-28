@@ -9,7 +9,7 @@ const ImageGallery = () => {
   const { images, setSelectedImage, hasMore, loadMoreImages, setModalOpen, isLoading } = useGallery();
   const loadMoreRef = useRef(null);
   const isInView = useInView(loadMoreRef, { once: false });
-  
+
   // Handle infinite scrolling
   useEffect(() => {
     if (isInView && hasMore) {
@@ -28,16 +28,16 @@ const ImageGallery = () => {
         <div className="text-center py-20">
           <GalleryVertical size={48} className="mx-auto text-muted-foreground/50 mb-4" />
           <h3 className="text-xl font-medium text-muted-foreground">No images found</h3>
-          <p className="text-muted-foreground mt-2">Try changing your search or filters</p>
+          <p className="text-muted-foreground mt-2">Try changing your searches or filters</p>
         </div>
       ) : (
-        <MasonryGrid 
-          images={images} 
-          onImageClick={handleImageClick} 
-          isLoading={isLoading} 
+        <MasonryGrid
+          images={images}
+          onImageClick={handleImageClick}
+          isLoading={isLoading}
         />
       )}
-      
+
       {/* Infinite scroll trigger */}
       <div ref={loadMoreRef} className="h-20 w-full flex justify-center items-center py-16">
         {hasMore && !isLoading && (
